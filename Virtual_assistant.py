@@ -9,7 +9,7 @@ import datetime
 from wikipedia import summary
 from pywhatkit import playonyt
 import webbrowser
-from os import startfile,remove
+from os import startfile
 listener=sr.Recognizer()
 with open("name.txt","a") as f:
     pass
