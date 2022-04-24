@@ -59,7 +59,7 @@ def TakeCommand(rememberable=True):
         try:
             with sr.Microphone() as source:
                 print ()
-                print ("waiting for command...")
+                print ("Ask anything ...")
                 print ()
                 
                 voice = listener.listen(source)
@@ -85,8 +85,11 @@ def analyze():
                 
     user_command=TakeCommand()
     user_command=user_command.lower()
-
-    if "search for" in user_command:
+    if "say" in user_command and "inverted" in user_command:
+        user_command=user_command.replace("say","")
+        user_command=user_command.replace("inverted","")
+        talk(f"You said: {user_command[::-1]} ")
+    elif "search for" in user_command:
         user_command=user_command.replace('seach for','')
         talk ("Searching wikipedia...")
         results=summary(user_command,2)
@@ -143,10 +146,7 @@ def analyze():
         with open(f"note{seconds}.txt","w+") as f:
             f.write(note)
     
-    elif "say" in user_command and "inverted" in user_command:
-        user_command=user_command.replace("say","")
-        user_command=user_command.replace("inverted","")
-        talk(f"You said: {user_command[::-1]} ")
+
     else:
         talk("I don't understand")
 
