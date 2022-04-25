@@ -7,7 +7,7 @@ import speech_recognition as sr
 import pyttsx3
 import datetime
 from wikipedia import summary
-from pywhatkit import playonyt
+
 import webbrowser
 from os import startfile
 listener=sr.Recognizer()
@@ -95,6 +95,7 @@ def analyze():
         results=summary(user_command,2)
         talk (results)
     elif 'play' in user_command:
+            from pywhatkit import playonyt
             user_command=user_command.replace('play','')
             talk('playing '+ user_command)
             playonyt(user_command)
