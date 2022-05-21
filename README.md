@@ -2,7 +2,7 @@ Virtual_Assistant
 =================
 ## Language: Python
 Create simple virtual assistants in Python that does many things according to what you tell them !
-### Functions:
+### Current Functions:
 * Take notes.
 * Say things inverted.
 * Greet based on time.
