@@ -1,7 +1,7 @@
 print("Initializing")
 
 
-
+import playsound
 from pyjokes import get_joke
 import speech_recognition as sr
 import pyttsx3
@@ -37,7 +37,7 @@ def wishMe():
     hour=int(datetime.datetime.now().hour)
     if hour>=0 and hour<=12:
         talk(f"Good Morning {user_name}",False)
-    if hour>12 and hour<15:
+    elif hour>12 and hour<15:
         talk(f"Good afternoon {user_name}",False)
     else:
         talk(f"Good Evening {user_name}",False)
@@ -59,7 +59,7 @@ def TakeCommand(rememberable=True):
         try:
             with sr.Microphone() as source:
                 print ()
-                print ("Ask anything ...")
+                playsound.playsound("start.mp3")
                 print ()
                 
                 voice = listener.listen(source)
