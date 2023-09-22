@@ -136,7 +136,7 @@ def analyze():
     elif "open youtube" in user_command:
         webbrowser.open("youtube.com")
     elif "open code" in user_command:
-        startfile("C:\\Users\\abhir\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe")
+        startfile("C:\\Users\\[USER_NAME]\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe")
 
     elif "note" in user_command:
         talk("What should I say ?")
